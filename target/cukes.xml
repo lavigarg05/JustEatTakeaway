@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="46.988763">
+<testcase classname="Place a new order" name="Order burgers" time="26.653283">
+<system-out><![CDATA[Given I launch the website on browser Firefox...............................passed
+When I search for "BRT Cypress Test Restaurant".............................passed
+And I select restaurant "BRT Cypress Test Restaurant".......................passed
+And I select menu option "Burgers"..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Place a new order" name="Order burgers 2" time="20.33548">
+<system-out><![CDATA[Given I launch the website on browser Chrome................................passed
+When I search for "BRT Cypress Test Restaurant".............................passed
+And I select restaurant "BRT Cypress Test Restaurant".......................passed
+And I select menu option "Burgers"..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

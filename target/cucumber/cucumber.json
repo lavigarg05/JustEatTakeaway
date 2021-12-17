@@ -1,0 +1,262 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#Author: lavigarg05@gmail.com"
+      }
+    ],
+    "line": 3,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1133561000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.init()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Order burgers",
+        "description": "",
+        "id": "place-a-new-order;order-burgers;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1341809100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.after()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 10653067700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I launch the website on browser Firefox",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Firefox",
+                  "offset": 32
+                }
+              ],
+              "location": "CommonStepDefs.launchWebsite(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5544070400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I search for \"BRT Cypress Test Restaurant\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BRT Cypress Test Restaurant",
+                  "offset": 14
+                }
+              ],
+              "location": "CommonStepDefs.searchForKeyword(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5260371300,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I select restaurant \"BRT Cypress Test Restaurant\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BRT Cypress Test Restaurant",
+                  "offset": 21
+                }
+              ],
+              "location": "CommonStepDefs.selectRestaurant(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2720403400,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I select menu option \"Burgers\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Burgers",
+                  "offset": 22
+                }
+              ],
+              "location": "CommonStepDefs.selectMenuItem(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@SearchRestaurant"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 76647200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.init()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Order burgers",
+        "description": "",
+        "id": "place-a-new-order;order-burgers;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 949085800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.after()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6291950400,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I launch the website on browser Chrome",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Chrome",
+                  "offset": 32
+                }
+              ],
+              "location": "CommonStepDefs.launchWebsite(String)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4335412100,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I search for \"BRT Cypress Test Restaurant\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BRT Cypress Test Restaurant",
+                  "offset": 14
+                }
+              ],
+              "location": "CommonStepDefs.searchForKeyword(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5776466700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I select restaurant \"BRT Cypress Test Restaurant\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "BRT Cypress Test Restaurant",
+                  "offset": 21
+                }
+              ],
+              "location": "CommonStepDefs.selectRestaurant(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2905918000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I select menu option \"Burgers\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Burgers",
+                  "offset": 22
+                }
+              ],
+              "location": "CommonStepDefs.selectMenuItem(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@SearchRestaurant"
+          }
+        ]
+      }
+    ],
+    "name": "Place a new order",
+    "description": "",
+    "id": "place-a-new-order",
+    "keyword": "Feature",
+    "uri": "PlaceNewOrder.feature"
+  }
+]
