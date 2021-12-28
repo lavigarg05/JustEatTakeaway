@@ -84,6 +84,14 @@ public class ExcelUtil {
 			return SheetData.get(row).get(column);			
 		}
 		
+		public static LinkedHashMap<String, String> getRowData(int row) {
+			return SheetData.get(row);			
+		}
+		
+		public List<LinkedHashMap<String, String>> getSheetData() {
+			return SheetData;			
+		}
+		
 		public static String readCellValue(Cell cell){
 			
 			String val="";

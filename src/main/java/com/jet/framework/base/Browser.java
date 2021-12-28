@@ -51,6 +51,7 @@ public class Browser extends Base{
 		}
 		
 		DriverContext.setDriver(driver);
+		DriverContext.setJSExecutor();
 		logger.info(browserType.toString()+" browser initialized");
 	}
 	

@@ -12,7 +12,7 @@ import com.jet.framework.base.DriverContext;
 import com.jet.framework.utilities.WaitUtility;
 
 
-public class ShowRestaurants extends BasePage{
+public class ShowRestaurants extends BasePage {
 
 	public ShowRestaurants() {
 		super();
@@ -22,8 +22,9 @@ public class ShowRestaurants extends BasePage{
 	@FindBy(how = How.NAME,using ="search")
 	public WebElement txtSearch;
 	
-	public WebElement getRestaurantCard(String restaurantName) {		
-		return DriverContext.getDriver().findElement(By.xpath("//*[@data-qa='search-result-card-title' and text()='"+restaurantName+"']"));		
+	public WebElement getRestaurantCard(String restaurantName) throws InterruptedException {
+		Thread.sleep(5000);
+		return WaitUtility.WaitForElementToBeClickableByXpath("//h3[@data-qa='search-result-card-title' and text()='"+restaurantName+"']");		
 	}
 	
 	
@@ -39,10 +40,9 @@ public class ShowRestaurants extends BasePage{
 		}
 	}
 	
-	public void selectRestaurant(String restaurantName) {
-		getRestaurantCard(restaurantName).click();
+	public void selectRestaurant(String restaurantName) throws InterruptedException {
+		WebElement restautantCard=getRestaurantCard(restaurantName);
+		restautantCard.click();
 	}
 	
-	
-
 }

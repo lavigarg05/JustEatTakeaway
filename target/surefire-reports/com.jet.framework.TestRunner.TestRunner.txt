@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.jet.framework.TestRunner.TestRunner
--------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 48.226 sec - in com.jet.framework.TestRunner.TestRunner
