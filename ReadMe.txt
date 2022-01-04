@@ -1,5 +1,5 @@
 1) This project is to automate on below front end scenarios: 
-	a) Confirm an order cannot be placed when the consumer is not in the same City / Region
+	a) Confirm an order cannot be placed when the consumer is not in the same City / Region (Executed on Firefox and Chrome browsers)
 	b) Confirm an order cannot be checked out if the cart value is less than minimum order value of the restaurant.
 	
 2) The technology stack used is Java+Selenium+Cucumber+Maven
@@ -29,4 +29,5 @@ Alternatively, in any IDE , run as maven with Goals -> clean install
 - To view application screenshots --> JustEatTakeaway/screenshots/
 
 9) Static data (User Address) is stored in file --> JustEatTakeaway/TestData/AdressInfo.xlsx
+
 10) To run test as headless : JustEatTakeaway/config/config.properties --> set headless=true

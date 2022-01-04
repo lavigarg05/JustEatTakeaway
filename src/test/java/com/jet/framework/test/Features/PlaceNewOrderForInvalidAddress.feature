@@ -2,7 +2,7 @@
 
 Feature: Place a new order for invalid address
   
-	@PlaceOrder @Regression
+	@PlaceOrderForInvalidAddress @Regression
   Scenario Outline: Order burgers for invalid address on browser <browser>
   	Given I launch the website on browser <browser>
     When I search for "<searchString>"
