@@ -1,12 +1,11 @@
 package com.jet.framework.stepDefinitions;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.testng.Assert;
-
 import com.jet.framework.Pages.CheckoutPage;
 import com.jet.framework.Pages.RestaurantPage;
 import com.jet.framework.Pages.ShowRestaurants;
@@ -14,8 +13,9 @@ import com.jet.framework.base.BrowserType;
 import com.jet.framework.base.DriverContext;
 import com.jet.framework.base.FrameworkInitialize;
 import com.jet.framework.connections.Settings;
+import com.jet.framework.utilities.Calculations;
 import com.jet.framework.utilities.ExcelUtil;
-
+import com.jet.framework.utilities.Util;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,6 +27,7 @@ public class CommonStepDefs extends FrameworkInitialize{
 	 protected Object CurrentPage;
 	 protected RestaurantPage rp=new RestaurantPage();
 	 protected CheckoutPage cop;
+	 private Calculations calc=new Calculations();
 
 	  
 	  /**
@@ -88,13 +89,18 @@ public class CommonStepDefs extends FrameworkInitialize{
 	 * and count contains ; seperated count of each respective item to be added
 	 * description : adds food items to cart
 	 */
-	@When("^I add food items in cart$")
+	@When("^I add food items in cart and verify total bill amount$")
 	public void addItems(DataTable dt) {
 		List<Map<String, String>> itemMap = dt.asMaps(String.class, String.class);
 		List<String> foodItemNames=Arrays.asList(itemMap.get(0).get("item").split(";"));
- 		List<String> foodItemCount=Arrays.asList(itemMap.get(0).get("count").split(";"));
+ 		List<Integer> foodItemCount=Util.stringListToInt(Arrays.asList(itemMap.get(0).get("count").split(";")));
 		boolean result = rp.addItem(foodItemNames, foodItemCount);
 		Assert.assertTrue(result==true, "item names and item count size is not same");
+		List<Double> priceList = rp.getItemPrice(foodItemNames);		
+		double totalAmountExpected = calc.calculateCartAmount(priceList, foodItemCount);
+		double totalAmountActual=rp.getTotalCartValue();
+		Assert.assertEquals(totalAmountActual, totalAmountExpected);
+		logger.info("PASS: Total cart amount verified : "+totalAmountActual);
 		rp.clickCheckout();
 		logger.info("Clicked on checkout button");
 	}
@@ -111,8 +117,9 @@ public class CommonStepDefs extends FrameworkInitialize{
 	}
 	
 	@Then("^verify error message (.*)$")
-	public void verify(String errorExpected) {
+	public void verify(String errorExpected) throws IOException {
 		String errorActual = cop.getErrorText();
+		Util.takeScreenshot("errorScreenshot.png");
 		Assert.assertTrue(errorActual.contains(errorExpected), "Expected and Actual error message mismatch. \nExpected : '"+errorExpected+"' \nActual : '"+errorActual+"'");
 		logger.info("Message displayed on screen : "+ errorActual);
 	}

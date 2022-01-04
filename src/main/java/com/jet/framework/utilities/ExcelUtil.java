@@ -59,8 +59,8 @@ public class ExcelUtil {
 					for (int j=0;j<rowheader.size();j++){
 						String val=readCellValue(row.getCell(j));
 						//if(val!=null)
-						if(rowheader.equals("PhoneNum"))
-							val = new BigDecimal(val).toPlainString();
+//						if(rowheader.equals("PhoneNum"))
+//							val = new BigDecimal(val).toPlainString();
 						rowdata.put(rowheader.get(j), val);
 					}
 					SheetData.add(rowdata);
@@ -115,7 +115,7 @@ public class ExcelUtil {
 				
 		
 			case NUMERIC :{
-				val=cell.getNumericCellValue()+"";
+				val=String.valueOf(cell.getNumericCellValue())+"";
 				break;
 			}			
 	
@@ -135,7 +135,7 @@ public class ExcelUtil {
 			ExcelUtil util=new ExcelUtil(Settings.ExcelPath);
 			System.out.println(util.getRowCount());
 			System.out.println(util.getColumns());
-			System.out.println(util.getCellValue(0, "e-mail"));
+			System.out.println(util.getCellValue(0, "HouseNr"));
 			System.out.println(util.getCellValue(0, "PhoneNum"));
 			
 		}

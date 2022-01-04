@@ -12,11 +12,11 @@ import com.jet.framework.connections.Settings;
 
 public class Browser extends Base{
 	
-	private WebDriver driver;
+	private WebDriver driver=null;
 	
 	
 	public void InitializeBrowser(BrowserType browserType) {
-		
+
 		switch(browserType) {
 			
 			case Chrome: 

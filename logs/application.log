@@ -1,0 +1,11 @@
+16:28:00.513 [main] INFO  com.jet.framework.base.Base - Chrome browser initialized
+16:28:06.693 [main] INFO  com.jet.framework.base.Base - Website https://www.thuisbezorgd.nl/en/delivery/food/breezanddijk-8766?showTestRestaurants=true launched successfully on Chrome browser
+16:28:11.628 [main] INFO  com.jet.framework.base.Base - Search successfull for 'BRT Cypress Test Restaurant'
+16:28:21.327 [main] INFO  com.jet.framework.base.Base - Restaurant 'BRT Cypress Test Restaurant' selected
+16:28:31.546 [main] INFO  com.jet.framework.base.Base - Clicked menu option - Burgers
+16:28:32.381 [main] INFO  com.jet.framework.base.Base - Added 2 Chicken Burger to cart
+16:28:32.450 [main] INFO  com.jet.framework.base.Base - PASS: Total cart amount verified : 14.0
+16:28:32.758 [main] INFO  com.jet.framework.base.Base - Clicked on checkout button
+16:28:32.834 [main] INFO  com.jet.framework.base.Base - Placing order for customer with details : {Name=TestUSer, Address=main street, HouseNr=2415, PostCode=8888AA, City=Enschede, PhoneNum=1234567890, e-mail=testuser@test.test}
+16:28:40.377 [main] INFO  com.jet.framework.base.Base - Error screenshot captured at screenshots/errorScreenshot.png
+16:28:40.378 [main] INFO  com.jet.framework.base.Base - Message displayed on screen : BRT Cypress Test Restaurant does not deliver in the delivery area 8888AA. Please tap here to see restaurants that deliver in the area 8888AA.

@@ -29,6 +29,7 @@ public class MyHooks extends FrameworkInitialize{
 	@After
 	public void after() {
 		DriverContext.getDriver().quit();
+		DriverContext.setDriver(null);
 	}
 
 }

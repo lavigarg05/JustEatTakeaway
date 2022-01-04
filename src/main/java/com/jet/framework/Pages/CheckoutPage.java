@@ -16,6 +16,7 @@ public class CheckoutPage extends BasePage{
 
 	public CheckoutPage() {
 		super();
+		
 	}
 	
 	@FindBy(how = How.NAME,using ="streetName")
