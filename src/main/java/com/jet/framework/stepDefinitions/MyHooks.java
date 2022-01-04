@@ -9,6 +9,7 @@ import com.jet.framework.base.FrameworkInitialize;
 import com.jet.framework.connections.ConfigReader;
 import com.jet.framework.connections.Settings;
 import com.jet.framework.utilities.ExcelUtil;
+import com.jet.framework.utilities.Util;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -27,8 +28,10 @@ public class MyHooks extends FrameworkInitialize{
 	}
 	
 	@After
-	public void after() {
-		DriverContext.getDriver().quit();
+	public void after(Scenario scenario) throws IOException {
+		String filename=scenario.getName().replaceAll(" ", "_")+".png";
+		Util.takeScreenshot(filename);
+		//DriverContext.getDriver().quit();
 		DriverContext.setDriver(null);
 	}
 

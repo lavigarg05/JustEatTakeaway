@@ -12,7 +12,7 @@ Feature: Place a new order for invalid address
     | item           | count |
     | Chicken Burger | 2     |
     When I checkout with cash and place the order
-    Then verify error message <errorMessage>
+    Then verify checkout error message <errorMessage>
 
 
     Examples: 

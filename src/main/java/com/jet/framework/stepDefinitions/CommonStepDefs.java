@@ -87,7 +87,7 @@ public class CommonStepDefs extends FrameworkInitialize{
 	  /**
 	 * @param DataTable : cucumber dataTable with 2 headers item and count. 'item' contains ; seperated food items 
 	 * and count contains ; seperated count of each respective item to be added
-	 * description : adds food items to cart
+	 * description : adds food items to cart and verifies total cart value
 	 */
 	@When("^I add food items in cart and verify total bill amount$")
 	public void addItems(DataTable dt) {
@@ -101,8 +101,6 @@ public class CommonStepDefs extends FrameworkInitialize{
 		double totalAmountActual=rp.getTotalCartValue();
 		Assert.assertEquals(totalAmountActual, totalAmountExpected);
 		logger.info("PASS: Total cart amount verified : "+totalAmountActual);
-		rp.clickCheckout();
-		logger.info("Clicked on checkout button");
 	}
 
 	 /**
@@ -110,16 +108,21 @@ public class CommonStepDefs extends FrameworkInitialize{
 	 */
 	@When("^I checkout with cash and place the order$")
 	public void checkout() {
+		rp.clickCheckout();
+		logger.info("Clicked on checkout button");
 		cop=rp.getCheckOutPage();
 		LinkedHashMap<String, String> checkOutInfo = ExcelUtil.getRowData(0);		
 		cop.checkOutWithCash(checkOutInfo);
 		cop.placeOrder();
 	}
 	
-	@Then("^verify error message (.*)$")
-	public void verify(String errorExpected) throws IOException {
-		String errorActual = cop.getErrorText();
-		Util.takeScreenshot("errorScreenshot.png");
+	@Then("^verify (\\w+) error message (.*)$")
+	public void verify(String errorPage,String errorExpected) throws IOException {
+		String errorActual="";
+		if(errorPage.equalsIgnoreCase("checkout"))
+		    errorActual = cop.getErrorText();
+		else if(errorPage.equalsIgnoreCase("cart"))
+			errorActual = rp.getCartErrorMessage();
 		Assert.assertTrue(errorActual.contains(errorExpected), "Expected and Actual error message mismatch. \nExpected : '"+errorExpected+"' \nActual : '"+errorActual+"'");
 		logger.info("Message displayed on screen : "+ errorActual);
 	}

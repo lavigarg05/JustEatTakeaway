@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 
 import com.jet.framework.base.Base;
 import com.jet.framework.base.DriverContext;
@@ -20,6 +21,11 @@ public class Util extends Base {
 		logger.info("Error screenshot captured at screenshots/"+ fileName);
 	}
 	
+	
+	public void scrollToItem(WebElement el) {
+		DriverContext.getJSExecutor().executeScript("arguments[0].scrollIntoView(true);", el);
+		DriverContext.getJSExecutor().executeScript("window.scrollBy(0,-75)");
+	}
 	public static List<Integer> stringListToInt(List<String> list){
 		List<Integer> listInt=new ArrayList<>();
 		for(String s:list)

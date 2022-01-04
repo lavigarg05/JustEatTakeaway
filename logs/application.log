@@ -1,12 +1,17 @@
-17:41:03.512 [main] INFO  com.jet.framework.base.Base - ********************************Test - Order burgers for invalid address on browser Firefox*************************************
-17:41:12.046 [main] INFO  com.jet.framework.base.Base - Firefox browser initialized
-17:41:14.856 [main] INFO  com.jet.framework.base.Base - Website https://www.thuisbezorgd.nl/en/delivery/food/breezanddijk-8766?showTestRestaurants=true launched successfully on Firefox browser
-17:41:20.563 [main] INFO  com.jet.framework.base.Base - Search successfull for 'BRT Cypress Test Restaurant'
-17:41:31.038 [main] INFO  com.jet.framework.base.Base - Restaurant 'BRT Cypress Test Restaurant' selected
-17:41:41.599 [main] INFO  com.jet.framework.base.Base - Clicked menu option - Burgers
-17:41:42.890 [main] INFO  com.jet.framework.base.Base - Added 2 Chicken Burger to cart
-17:41:42.969 [main] INFO  com.jet.framework.base.Base - PASS: Total cart amount verified : 14.0
-17:41:43.709 [main] INFO  com.jet.framework.base.Base - Clicked on checkout button
-17:41:43.778 [main] INFO  com.jet.framework.base.Base - Placing order for customer with details : {Name=TestUSer, Address=main street, HouseNr=2415, PostCode=8888AA, City=Enschede, PhoneNum=1234567890, e-mail=testuser@test.test}
-17:41:51.804 [main] INFO  com.jet.framework.base.Base - Error screenshot captured at screenshots/errorScreenshot.png
-17:41:51.804 [main] INFO  com.jet.framework.base.Base - Message displayed on screen : BRT Cypress Test Restaurant does not deliver in the delivery area 8888AA. Please tap here to see restaurants that deliver in the area 8888AA.
+19:11:31.793 [main] INFO  com.jet.framework.base.Base - ********************************Test - Order burgers for invalid address on browser Firefox*************************************
+19:11:40.364 [main] INFO  com.jet.framework.base.Base - Firefox browser initialized
+19:11:43.830 [main] INFO  com.jet.framework.base.Base - Website https://www.thuisbezorgd.nl/en/delivery/food/breezanddijk-8766?showTestRestaurants=true launched successfully on Firefox browser
+19:11:48.585 [main] INFO  com.jet.framework.base.Base - Search successfull for 'BRT Cypress Test Restaurant'
+19:11:55.081 [main] INFO  com.jet.framework.base.Base - Restaurant 'BRT Cypress Test Restaurant' selected
+19:12:05.559 [main] INFO  com.jet.framework.base.Base - Clicked menu option - Burgers
+19:12:06.772 [main] INFO  com.jet.framework.base.Base - Added 2 Chicken Burger to cart
+19:12:06.831 [main] INFO  com.jet.framework.base.Base - PASS: Total cart amount verified : 14.0
+19:12:07.469 [main] INFO  com.jet.framework.base.Base - Clicked on checkout button
+19:12:07.528 [main] INFO  com.jet.framework.base.Base - Placing order for customer with details : {Name=TestUSer, Address=main street, HouseNr=2415, PostCode=8888AA, City=Enschede, PhoneNum=1234567890, e-mail=testuser@test.test}
+19:12:14.084 [main] INFO  com.jet.framework.base.Base - Message displayed on screen : BRT Cypress Test Restaurant does not deliver in the delivery area 8888AA. Please tap here to see restaurants that deliver in the area 8888AA.
+19:12:14.266 [main] INFO  com.jet.framework.base.Base - Error screenshot captured at screenshots/Order_burgers_for_invalid_address_on_browser_Firefox.png
+19:12:14.282 [main] INFO  com.jet.framework.base.Base - ********************************Test - Order an item with value less than minimum acceptable amount*************************************
+19:12:20.298 [main] INFO  com.jet.framework.base.Base - Firefox browser initialized
+19:12:22.810 [main] INFO  com.jet.framework.base.Base - Website https://www.thuisbezorgd.nl/en/delivery/food/breezanddijk-8766?showTestRestaurants=true launched successfully on Firefox browser
+19:12:27.953 [main] INFO  com.jet.framework.base.Base - Search successfull for 'BRT Cypress Test Restaurant'
+19:13:04.408 [main] INFO  com.jet.framework.base.Base - Error screenshot captured at screenshots/Order_an_item_with_value_less_than_minimum_acceptable_amount.png

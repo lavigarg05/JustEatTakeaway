@@ -22,7 +22,7 @@ import com.jet.framework.utilities.WaitUtility;
 
 public class RestaurantPage extends BasePage{
 	
-	
+	private Util util=new Util();
 
 	public RestaurantPage() {
 		super();
@@ -34,6 +34,9 @@ public class RestaurantPage extends BasePage{
 	@FindBy(how = How.XPATH,using ="//span[@data-qa='cart-expanded-summary-total']")
 	public WebElement txtTotalCartValue;
 	
+	@FindBy(how = How.XPATH,using ="	//div[@data-qa='cart-mov-message-not-reached']")
+	public WebElement txtCartErrorMessage;
+	
 
 	
 	public WebElement getFoodItemCategory(String ItemCategory) {		
@@ -42,6 +45,10 @@ public class RestaurantPage extends BasePage{
 
 	public void selectFoodItemCategory(String ItemCategory) {
 		getFoodItemCategory(ItemCategory).click();
+	}
+	
+	public String getCartErrorMessage() {
+		return txtCartErrorMessage.getText();
 	}
 	
 	public WebElement getAddItem(String ItemName) {
@@ -61,6 +68,7 @@ public class RestaurantPage extends BasePage{
 		for(int i=0;i<itemNameList.size();i++) {
 			WebElement itemName=getAddItem(itemNameList.get(i));
 			int itemCount=itemCountList.get(i);
+			util.scrollToItem(itemName);
 			WaitUtility.WaitForElementToBeClickable(itemName);
 			for(int j=0;j<itemCount;j++) {
 				action.moveToElement(itemName).perform();
