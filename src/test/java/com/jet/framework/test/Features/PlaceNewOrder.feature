@@ -2,7 +2,7 @@
 
 Feature: Place a new order for invalid address
   
-	@PlaceOrder
+	@PlaceOrder @Regression
   Scenario Outline: Order burgers for invalid address on browser <browser>
   	Given I launch the website on browser <browser>
     When I search for "<searchString>"
@@ -17,6 +17,5 @@ Feature: Place a new order for invalid address
 
     Examples: 
       | searchString                | browser  |FoodCategory |errorMessage                                                      |
-      #| BRT Cypress Test Restaurant | Firefox  | Burgers     |BRT Cypress Test Restaurant does not deliver in the delivery area |
-      | BRT Cypress Test Restaurant | Chrome   | Burgers     |BRT Cypress Test Restaurant does not deliver in the delivery area |
+      | BRT Cypress Test Restaurant | Firefox  | Burgers     |BRT Cypress Test Restaurant does not deliver in the delivery area |
  

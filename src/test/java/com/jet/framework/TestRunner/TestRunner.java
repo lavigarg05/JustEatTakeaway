@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(  
 	    features = "src/test/java/com/jet/framework/test/Features",
 	    glue="com/jet/framework/stepDefinitions",
-	    tags="@PlaceOrder",
+	    tags="@Regression",
 	    monochrome=true,
 	    plugin= {"pretty","html:target/cucumber","json:target/cucumber/cucumber.json","junit:target/cukes.xml"})
 

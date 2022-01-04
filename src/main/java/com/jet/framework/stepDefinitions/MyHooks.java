@@ -21,7 +21,7 @@ public class MyHooks extends FrameworkInitialize{
 	
 	@Before
 	public void init(Scenario scenario) throws FileNotFoundException, IOException {
-		System.out.println("********************************Test - "+scenario.getName()+"*************************************");
+		logger.info("********************************Test - "+scenario.getName()+"*************************************");
 		ConfigReader.loadConfig();
 		util=new ExcelUtil(Settings.ExcelPath);		
 	}
