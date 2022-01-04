@@ -31,7 +31,7 @@ public class MyHooks extends FrameworkInitialize{
 	public void after(Scenario scenario) throws IOException {
 		String filename=scenario.getName().replaceAll(" ", "_")+".png";
 		Util.takeScreenshot(filename);
-		//DriverContext.getDriver().quit();
+		DriverContext.getDriver().quit();
 		DriverContext.setDriver(null);
 	}
 

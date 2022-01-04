@@ -13,11 +13,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import com.jet.framework.base.Base;
 import com.jet.framework.base.BasePage;
 import com.jet.framework.base.DriverContext;
 import com.jet.framework.utilities.Util;
-import com.jet.framework.utilities.WaitUtility;
 
 
 public class RestaurantPage extends BasePage{
@@ -69,7 +67,7 @@ public class RestaurantPage extends BasePage{
 			WebElement itemName=getAddItem(itemNameList.get(i));
 			int itemCount=itemCountList.get(i);
 			util.scrollToItem(itemName);
-			WaitUtility.WaitForElementToBeClickable(itemName);
+			wait.WaitForElementToBeClickable(itemName);
 			for(int j=0;j<itemCount;j++) {
 				action.moveToElement(itemName).perform();
 				itemName.click();
@@ -107,7 +105,7 @@ public class RestaurantPage extends BasePage{
 	}
 	
 	public CheckoutPage getCheckOutPage() {
-		WaitUtility.WaitForElementToBeVisable(checkOutHeading());
+		wait.WaitForElementToBeVisable(checkOutHeading());
 		return new CheckoutPage();			
 	}
 	

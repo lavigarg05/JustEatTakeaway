@@ -1,8 +1,6 @@
 package com.jet.framework.Pages;
 
 import java.util.LinkedHashMap;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,10 +8,10 @@ import org.openqa.selenium.support.How;
 
 import com.jet.framework.base.BasePage;
 import com.jet.framework.base.DriverContext;
-import com.jet.framework.utilities.WaitUtility;
+
 
 public class CheckoutPage extends BasePage{
-
+	
 	public CheckoutPage() {
 		super();
 		
@@ -93,7 +91,7 @@ public class CheckoutPage extends BasePage{
 		logger.info("Placing order for customer with details : "+rowData);
 		addAddress(rowData);		
 		selectPayWith() ;
-		WaitUtility.WaitForElementToBeVisable(paymentMethodsHeading());
+		wait.WaitForElementToBeVisable(paymentMethodsHeading());
 		selectPaymentOption("Cash");
 		clickDone();
 	}
@@ -103,7 +101,7 @@ public class CheckoutPage extends BasePage{
 		
 		try {
 			banner=getErrorBanner();
-			WaitUtility.WaitForElementToBeVisable(banner);
+			wait.WaitForElementToBeVisable(banner);
 		}
 		catch(org.openqa.selenium.StaleElementReferenceException ex)
 		{

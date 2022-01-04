@@ -25,11 +25,12 @@ public class CommonStepDefs extends FrameworkInitialize{
 	
 	 protected ShowRestaurants sr;
 	 protected Object CurrentPage;
-	 protected RestaurantPage rp=new RestaurantPage();
+	 protected RestaurantPage rp;
 	 protected CheckoutPage cop;
 	 private Calculations calc=new Calculations();
 
-	  
+
+  
 	  /**
 	 * @param browser : name of browser 
 	 * description : this glue code launches the website in given browser. 
@@ -91,6 +92,8 @@ public class CommonStepDefs extends FrameworkInitialize{
 	 */
 	@When("^I add food items in cart and verify total bill amount$")
 	public void addItems(DataTable dt) {
+		if(rp==null)
+			rp=new RestaurantPage();
 		List<Map<String, String>> itemMap = dt.asMaps(String.class, String.class);
 		List<String> foodItemNames=Arrays.asList(itemMap.get(0).get("item").split(";"));
  		List<Integer> foodItemCount=Util.stringListToInt(Arrays.asList(itemMap.get(0).get("count").split(";")));
